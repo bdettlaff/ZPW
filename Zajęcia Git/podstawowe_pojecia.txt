@@ -1,0 +1,8 @@
+repozytorium
+github/bitbucket/gitlab
+git
+commit
+branch
+checkout
+merge
+rebase

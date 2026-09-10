@@ -36,8 +36,6 @@
 
     $delta = pow($b,2) - (4 * $a * $c);
     
-
-
     if($delta > 0){
         echo "dwa miejsce zerowe";
         //obliczenie miejsc zerowych

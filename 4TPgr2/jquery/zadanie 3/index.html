@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            Zadania jquery
+        </title>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous"></script>
+         <script>
+            $(function(){
+                // $("button").on("click",function(){
+                //     console.log("test działania")
+                // })
+
+                // $("button").click(function(){
+                //     console.log("test działania 2")
+                // })
+                $("button").click(function(){
+                    //alert("Cześć!")
+                    //$("#komunikat").text("Cześć!");
+                })
+
+                // $("#kwadrat").click(function(){
+                //     $("#kwadrat").css("background-color","red");
+                // })
+
+                $("#reset").click(function(){
+                    $("#kwadrat").css("background-color","lightgrey");
+                    $("#komunikat").text("")
+                })
+
+                let i = 0
+                $("#kwadrat").click(function(){
+                    i++;
+                    $("#komunikat").text("Liczba kliknięć: " + i)
+                })
+            })
+         </script>
+        <style>
+            #kwadrat { width: 150px; height: 150px; background: lightgray; }
+        </style>
+    </head>
+    <body>
+        <button id="przywitaj">Przywitaj się</button>
+        <button id="reset">Resetuj</button>
+        <p id="komunikat"></p>
+        
+        <div id="kwadrat"></div>
+    </body>
+</html>

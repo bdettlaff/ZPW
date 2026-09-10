@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Strona jquery</title>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous">
+        </script>
+        <script>
+            $(function(){
+                // $("button").on("click", function(){
+                //     console.log("Testujemy przycisk")
+                // })
+
+                // $("button").click(function(){
+                //     console.log("Testujemy przycisk drugim sposobem.")
+                // })
+
+                $("button").click(function(){
+                     $("#komunikat").prepend("Cześć")
+                })
+
+                $("div").click(function(){
+                    $("#kwadrat").css("background-color","red");
+                })
+
+                 $("#reset").click(function(){
+                    $("#kwadrat").css("background-color","lightgray");
+                    $("#komunikat").text("");
+                })
+                
+            });
+        </script>
+        <style>
+            #kwadrat { width: 150px; height: 150px; background: lightgray; }
+        </style>
+    </head>
+    <body>
+        <button id="przywitaj">Przywitaj się</button>
+        <button id="reset">Reset</button>
+
+        <p id="komunikat"></p>
+        
+        <div id="kwadrat"></div>
+    </body>
+</html>

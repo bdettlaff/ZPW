@@ -66,7 +66,9 @@
 
     $insertArray[$index] = $number;
 
-
-
+    // Zadanie 12
+    // Za pomocą pętli for, while i do...while napisz skrypt, który będzie:
+    // Zwiększał zmienną $i od 1 do 100 o 2
+    // Następnie zmniejszał ją do 1 o 4
 
 ?>

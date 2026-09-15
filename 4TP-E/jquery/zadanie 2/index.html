@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Wprowadzenie Jquery</title>
+        <script
+			  src="https://code.jquery.com/jquery-4.0.0.min.js"
+			  integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+			  crossorigin="anonymous">
+        </script>
+        <script>
+            $(function(){
+                console.log($("ul").html());
+                console.log($("li").eq(0).text());
+                $("ul").append("<li>" + "Blood of Dawnwalker" + "</li>");
+
+                let $a = $('li').last();
+                $('li').last().remove();
+                $('ul').prepend($a);
+
+                $("p").append($("h1").text())
+            })
+        </script>
+        <style>
+
+         </style>
+
+    </head>
+    <body>
+    <div id="container">
+        <h1>Lista Gier Komputerowych</h1>
+        <ul>
+            <li><a href="#">The Witcher 3: Wild Hunt</a></li>
+            <li><a href="#">Cyberpunk 2077</a></li>
+            <li><a href="#">Elden Ring</a></li>
+            <li><a href="#">Baldur's Gate 3</a></li>
+            <li><a href="#">Starfield</a></li>
+            <li><a href="#">Hollow Knight</a></li>
+            <li><a href="#" >Minecraft</a></li>
+            <li><a href="#">Portal 2</a></li>
+            <li><a href="#">The Legend of Zelda: Breath of the Wild</a></li>
+            <li><a href="#">Dark Souls III</a></li>
+            <li><a href="#">Valorant</a></li>
+            <li><a href="#">Counter-Strike 2</a></li>
+        </ul>
+
+        <p></p>
+    </div>
+    </body>
+</html>

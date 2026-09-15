@@ -1,53 +1,22 @@
 <?php
-    echo "Testujemy czy działa";
-    $zmienna = 5; 
+//     Zadanie 1
+// Napisz program informujący, czy liczba jest parzysta czy nieparzysta.
 
-    if($zmienna > 4){
-        echo "Zmienna większa od 4";
-    } else if($zmienna == 5) {
-        echo "zmienna równa sie 5";
-    } else {
-        echo "inny wynik";
-    }
-    
-    $kolor = "red";
+// Zadanie 2
+// Napisz program, który sprawdza, czy pierwsza liczba jest podzielna przez drugą.
 
-    switch ($kolor) {
-    case "red":
-        echo "czerwony";
-        break;
-    case "blue":
-        echo "niebieski";
-        break;
-    case "yellow":
-        echo "żółty";
-        break;
-    default:
-        echo "kolor nierozpoznany";
-    }
+// Zadanie 3
+// Napisz program sprawdzający, czy liczba należy do przedziału <1,10> lub <17,21>.
 
-    //Zadanie 1
-    $a = 1;
-    $b = -5;
-    $c = 6;
+// Zadanie 4
+// Napisz program informujący, czy liczba jest większa, mniejsza, czy równa zero.
 
-    pow(2,3); //potęga
-    sqrt(5); //pierwiastek
+// Zadanie 5
+// Napisz program sprawdzający wiek:
 
-    $delta = pow($b,2) - (4 * $a * $c);
-    
-    if($delta > 0){
-        echo "dwa miejsce zerowe";
-        //obliczenie miejsc zerowych
-    } else if ($delta == 0){
-        echo "jedno miejsce zerowe";
-        //obliczenie miejsc zerowych
-    } else {
-        echo "brak miejsc zerowych";
-    }
+// Mniej niż 11: dziecko
+// Między 11 a 17: nastolatek
+// 18 i więcej: dorosły
 
-    //delta > 0 -> dwa miejsce zerowe
-    // delta = 0 -> jedno miejsce zerowe
-    // delta < 0 -> brak miejsc zerowych
 
 ?>

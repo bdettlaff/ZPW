@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Strona jquery</title>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous">
+        </script>
+        <script>
+            $(function(){
+                let sumaKlikniec = 0;
+                $("#kwadrat").click(function(){
+                    sumaKlikniec++;
+                    $("#komunikat").text("Kliknięto " + sumaKlikniec + " razy");
+                })
+
+                $("#naKoniec").click(function(){
+                    let value = $("input").val();
+                    if(value.length > 0){
+                        $("ul").append("<li>" + value + "</li>")
+                        $("li").last().css({
+                            "color":"blue",
+                            "font-weight":"bold"
+                        });
+                        $("input").val("");
+                    }
+
+                })
+
+                $("#naPoczatek").click(function(){
+                    let value = $("input").val();
+                    if(value.length > 0){
+                        $("ul").prepend("<li>" + value + "</li>")
+                        $("li").first().css({
+                            "color":"green",
+                            "font-weight":"bold"
+                        });
+                        $("input").val("");
+                    }
+                })
+            });
+        </script>
+        <style>
+            #kwadrat{
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="kwadrat"></div>
+        <p id="komunikat"></p>
+
+        <ul id="lista">
+            <li>Chleb</li>
+            <li>Mleko</li>
+        </ul>
+
+        <input type="text" id="produkt" placeholder="Nazwa produktu">
+        <button id="naKoniec">Dodaj na koniec</button>
+        <button id="naPoczatek">Dodaj na początek</button>
+    </body>
+</html>

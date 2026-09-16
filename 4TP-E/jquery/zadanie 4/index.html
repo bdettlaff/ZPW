@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Wprowadzenie Jquery</title>
+        <script
+			  src="https://code.jquery.com/jquery-4.0.0.min.js"
+			  integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+			  crossorigin="anonymous">
+        </script>
+        <script>
+            $(function(){
+                $("#naKoniec").click(function(){
+                    let inputValue = $("input").val();
+                    if(inputValue.length != 0){
+                        $("ul").append("<li>" +inputValue +"</li>");
+                        $("li").last().css("color","blue");
+                    }
+                    $("input").val("");
+                })
+
+                $("#naPoczatek").click(function(){
+                    let inputValue = $("input").val();
+                    if(inputValue.length != 0){
+                        $("ul").prepend("<li>" +inputValue +"</li>");
+                        $("li").first().css("color","green");
+
+                    }
+                    $("input").val("");
+                })
+
+
+            })
+        </script>
+        <style>
+
+         </style>
+    </head>
+    <body>
+        <ul id="lista">
+            <li>Chleb</li>
+            <li>Mleko</li>
+        </ul>
+        <input type="text" id="produkt" placeholder="Nazwa produktu">
+        <button id="naKoniec">Dodaj na koniec</button>
+        <button id="naPoczatek">Dodaj na początek</button>    
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>Strona jquery</title>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous">
+        </script>
+        <script>
+            $(function(){
+                $("#answer").change(function(){
+                    if(this.checked){
+                        $("#sent").removeAttr("disabled");
+                    } else {
+                        $("#sent").attr("disabled","disabled")
+                    }
+                })
+
+                $("a").eq(1).addClass("another_link")
+                $("a").eq(2).removeClass()
+
+                $(".remove").click(function(){
+                    $("p").removeClass();
+                    alert("Udało się usunąć klasę.")
+                })
+            })
+        </script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 600px;
+                margin: 50px auto;
+                padding: 20px;
+                background-color: #f5f5f5;
+            }
+            h1 {
+                color: #333;
+                text-align: center;
+            }
+            ul {
+                background-color: white;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            li {
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+                color: #555;
+            }
+            li:last-child {
+                border-bottom: none;
+            }
+            li:hover {
+                color: #007bff;
+                font-weight: bold;
+            }
+
+            .link{
+                color: grey;
+                text-decoration: none;
+            }
+            
+            .another_link{
+                background-color: black;
+            }    
+            
+            .completely_different_link{
+                background-color: yellow;
+            }
+
+            .background{
+                background-color: red;
+            }
+
+            .font-size{
+                font-size: 150%;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="checkbox" id="answer">
+        <label for="answer">Czy akceptujesz?</label>
+        <button id="sent" disabled>Wyślij</button>
+
+        <div id="container">
+            <h1>Lista Gier Komputerowych</h1>
+        
+            <ul>
+                <li><a href="#">Cyberpunk 2077</a></li>
+                <li><a href="#">Elden Ring</a></li>
+                <li><a href="#" class="link">Baldur's Gate 3</a></li>
+                <li><a href="#" class="link">Starfield</a></li>
+                <li><a href="#" class="link">Hollow Knight</a></li>
+            </ul>
+        </div>
+
+        <p class="background font-size">Testowy tekst </p>
+        <button class="remove">Usuń klasy</button>
+    </body>
+</html>

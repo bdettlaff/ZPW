@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <title>Wprowadzenie Jquery</title>
+        <script
+			  src="https://code.jquery.com/jquery-4.0.0.min.js"
+			  integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+			  crossorigin="anonymous">
+        </script>
+        <script>
+            $(function(){
+                $("a").eq(1).addClass("another_link");
+                $("a").removeClass();
+
+                $("#remove").click(function(){
+                    $("p").removeClass();
+                    alert("sukces usunięcia")
+                })
+
+                $("li").each(function(){
+                    console.log("To jest element z id: " + this.id);
+                })
+
+                $("li").each(function(index, element){
+                    console.log(index + ":" + $(this).text());
+                })
+
+                console.log($("li").eq(0).attr("data-cena")) //zwraca stringa
+                console.log($("li").eq(0).data("cena")) // zwraca inta (jesli to liczba)
+            
+                let sum = 0;
+                $("#lista li").each(function(){
+                    sum = sum + $(this).data("cena")
+                })
+                $("#suma").text(sum)
+
+                $("#lista li").each(function(){
+                    if($(this).data("cena") > 20){
+                        $(this).addClass("drogie")
+                    }   
+                })
+
+                $("#lista li").each(function(index, element){
+                    if(index % 2 == 0){
+                        $(this).css("background-color","grey");
+                        //element.css("background-color","grey");
+                    }
+                })
+
+                $("#lista li").each(function(){
+                    if($(this).data("cena") > 20){
+                        $(this).css("background-color","yellow");
+                        return false; 
+                    }
+                })
+
+
+            })
+        </script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 600px;
+                margin: 50px auto;
+                padding: 20px;
+                background-color: #f5f5f5;
+            }
+            h1 {
+                color: #333;
+                text-align: center;
+            }
+            ul {
+                background-color: white;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            li {
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+                color: #555;
+            }
+            li:last-child {
+                border-bottom: none;
+            }
+            li:hover {
+                color: #007bff;
+                font-weight: bold;
+            }
+
+            .link{
+                color: grey;
+                text-decoration: none;
+            }
+            
+            .another_link{
+                background-color: black;
+            }    
+            
+            .completely_different_link{
+                background-color: yellow;
+            }
+            .background{
+                background-color: red;
+            }
+            font-size{
+                font-size: 150%;
+            }
+         </style>
+    </head>
+    <body>
+    <div id="container">
+        <h1>Lista Gier Komputerowych</h1>
+        <ul>
+            <li id="1" data-cena=25><a href="#">The Witcher 3: Wild Hunt</a></li>
+            <li id="2" data-cena=35><a href="#" class="link">Cyberpunk 2077</a></li>
+            <li id="3" data-cena=45><a href="#" class="link">Elden Ring</a></li>
+            <li id="4" data-cena=55><a href="#" class="link">Baldur's Gate 3</a></li>
+        </ul>
+    </div>
+
+    <p class="background font-size">TEST</p>
+    <button id="remove">Usuń</button>
+
+    <ul id="lista">
+        <li data-cena="10">Chleb</li>
+        <li data-cena="25">Ser</li>
+        <li data-cena="5">Woda</li>
+        <li data-cena="40">Szynka</li>
+    </ul>
+    <p id="suma"></p>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Strona jquery</title>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous">
+        </script>
+        <script>
+            $(function(){
+                $("#zmien").on("click",function(){
+                    $("#tekst").text("Nowy tekst")
+                })
+
+                $("#przelacz").on("click",function(){
+                    $("#pudelko").toggle();
+                })
+
+                $(".akapit").click(function(){
+                    $(this).toggleClass("podswietlony");
+                })
+            })
+        </script>
+        <style>
+            .podswietlony { background-color: yellow; }
+        </style>
+    </head>
+    <body>
+        <p id="tekst">Stary tekst</p>
+        <button id="zmien">Zmień</button>
+
+        <div id="pudelko">Widzisz mnie</div>
+        <button id="przelacz">Pokaż/ukryj</button>
+
+        <p class="akapit">Kliknij mnie</p>
+
+    </body>
+</html>

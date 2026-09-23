@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Strona jquery</title>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous">
+        </script>
+        <script>
+            $(function(){
+                let sum = 0
+                $("li").each(function(){
+                    sum += $(this).data("cena");
+                })
+                $("#suma").text(sum)
+
+                $("li").each(function(){
+                    if($(this).data("cena") > 20){
+                        $(this).addClass("drogie");
+                    }
+                })
+
+                $("li").each(function(index,element){
+                    if(index % 2 == 0){
+                        $(this).css("color","grey")
+                    }
+                })
+
+                
+                $("li").each(function(){
+                    if($(this).data("cena") > 20){
+                        $(this).css("background-color","green");
+                        return false
+                    }
+                })
+            })
+        </script>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <ul id="lista">
+            <li data-cena="10">Chleb</li>
+            <li data-cena="25">Ser</li>
+            <li data-cena="5">Woda</li>
+            <li data-cena="40">Szynka</li>
+        </ul>
+        <p id="suma"></p>
+    </body>
+</html>

@@ -17,6 +17,15 @@
                 $(".akapit").click(function(){
                     $(this).toggleClass("podswietlony");
                 })
+
+                $("#przywitaj").click(function(){
+                    let $imie = $("input").val()
+                    if($imie != ""){
+                        $("#wynik").text("Cześć, " + $imie)
+                    } else {
+                        $("#wynik").text("Podaj imie.")
+                    }
+                })
             })
         </script>
         <style>
@@ -31,6 +40,10 @@
         <button id="przelacz">Pokaż/ukryj</button>
 
         <p class="akapit">Kliknij mnie</p>
+
+        <input type="text" id="imie">
+        <button id="przywitaj">Przywitaj</button>
+        <p id="wynik"></p>
 
     </body>
 </html>

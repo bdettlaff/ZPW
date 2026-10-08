@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script
+		src="https://code.jquery.com/jquery-4.0.0.min.js"
+		integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+		crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+            $("#zmien").click(function(){
+                $("#tekst").text("Nowy tekst");
+            })
+
+            $("#przelacz").click(function(){
+                $("#pudelko").toggle();
+            })
+
+            $(".akapit").click(function(){
+                $(this).toggleClass("podswietlony")
+            })
+
+            $("li").each(function(index, element){
+                $(element).text((index + 1) + "." + $(element).text())
+            })
+        })
+    </script>
+    <style>
+        .podswietlony { background-color: yellow; }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <p id="tekst">Stary tekst</p>
+    <button id="zmien">Zmień</button>
+
+    <div id="pudelko">Widzisz mnie</div>
+    <button id="przelacz">Pokaż/ukryj</button>
+
+    <p class="akapit">Kliknij mnie</p>
+
+    <input type="text" id="imie">
+    <button id="przywitaj">Przywitaj</button>
+    <p id="wynik"></p>
+
+    <label><input type="checkbox" id="akceptuje"> Akceptuję regulamin</label>
+    <button id="wyslij" disabled>Wyślij</button>
+
+    <ul id="menu">
+        <li>Strona główna</li>
+        <li>O nas</li>
+        <li>Kontakt</li>
+    </ul>
+
+    <input type="text" id="login">
+    <input type="password" id="haslo">
+    <button id="zaloguj">Zaloguj</button>
+    <p id="komunikat"></p>
+
+
+</body>
+</html>

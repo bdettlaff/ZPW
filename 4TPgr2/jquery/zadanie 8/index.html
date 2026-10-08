@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>
+            Zadania jquery
+        </title>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous"></script>
+         <script>
+                $(function(){
+                    $("#ukryj").click(function(){
+                        $("#tekst").hide()
+                    })
+
+                    $("#kot").click(function () {
+                        $(this).hide(2000);
+                    });
+
+                    $("#pokaz").click(function () {
+                        $("#sekret").show();
+                    });
+
+                    $("#zapisz").click(function () {
+                        $("#komunikat").show(1000);
+                    });
+
+                    $("#przelacz").click(function () {
+                        $("#opis").toggle();
+                    });
+
+                    $("#pomoc").click(function () {
+                        $("#podpowiedz").toggle();
+                    });
+
+                    // SlideUp, SlideDown, SlideToggle
+                })
+         </script>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <p id="tekst">Kliknij, a zniknę</p>
+        <button id="ukryj">Ukryj</button>
+
+        <img id="kot" src="kot.jpg" width="200">
+
+        <p id="sekret" style="display:none">Tajna wiadomość!</p>
+        <button id="pokaz">Pokaż</button>
+
+        <button id="zapisz">Zapisz się</button>
+        <p id="komunikat" style="display:none">Dziękujemy za zapisanie się!</p>
+
+        <p id="opis">Opis produktu.</p>
+        <button id="przelacz">Pokaż/ukryj opis</button>
+
+        <input type="password">
+        <button id="pomoc">?</button>
+        <span id="podpowiedz" style="display:none">Hasło musi mieć min. 8 znaków</span>
+
+    </body>
+</html>

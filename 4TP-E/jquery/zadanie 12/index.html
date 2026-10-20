@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+		src="https://code.jquery.com/jquery-4.0.0.min.js"
+		integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+		crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+            $("#newsletter").change(function(){
+                if($(this).is(":checked")){
+                    $("#stan").text("Zapisano.")
+                } else {
+                    $("#stan").text("Wypisano.")
+                }
+            })
+
+            $("#regulamin").change(function () {
+                if ($(this).is(":checked")) {
+                    $("#rejestruj").prop("disabled", false);
+                } else {
+                    $("#rejestruj").prop("disabled", true);
+                }
+            });
+
+            $("#tekst").on("input", function(){
+                $("#podglad").text($(this).val())
+            })
+
+            $("#komentarz").on("input", function(){
+                let charactersLeft = 100 - $(this).val().length
+                $("#licznik").text(charactersLeft)
+
+                if(charactersLeft < 10){
+                    $("#licznik").css("color","red")
+                } else {
+                    $("#licznik").css("color","black")
+                }
+            })
+
+        })
+    </script>
+    <style>
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="newsletter"> Chcę newsletter
+    <p id="stan"></p>
+
+    <hr>
+    <!-- zadanie -->
+    <hr>
+    <input type="text" id="tekst">
+    <p>Podgląd: <span id="podglad"></span></p>
+    <hr>
+    <textarea id="komentarz" maxlength="100"></textarea>
+    <p>Pozostało znaków: <span id="licznik">100</span></p>
+
+</body>
+</html>

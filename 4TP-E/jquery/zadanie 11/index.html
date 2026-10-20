@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+		src="https://code.jquery.com/jquery-4.0.0.min.js"
+		integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+		crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+           $("#formularz").submit(function(e){
+                e.preventDefault()
+                if($("#nick").val() === ""){
+                    $("#info").text("Podaj nick!")
+                } else {
+                    $("#info").text("Wysłano!")
+                }
+           })
+
+           let haslo = "";
+             if (haslo.length < 6) {
+                $("#info").text("Hasło jest za krótkie").css("color", "red");
+            } else {
+                $("#info").text("Zalogowano").css("color", "green");
+            }
+
+            $("#kolor").change(function(){
+                $("body").css("background-color", $(this).val())
+            })
+
+            $("#pizza").change(function () {
+                $("#cena").text("Do zapłaty: " + $(this).val() + " zł");
+            });
+
+        })
+    </script>
+    <style>
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form id="formularz">
+        <input type="text" id="nick">
+        <button type="submit">Wyślij</button>
+    </form>
+    <p id="info"></p>
+    <hr>
+    <!-- zadanie z mailem -->
+    <hr>
+    <select id="kolor">
+        <option value="white">Biały</option>
+        <option value="yellow">Żółty</option>
+        <option value="lightblue">Niebieski</option>
+    </select>
+    <hr>
+</body>
+</html>

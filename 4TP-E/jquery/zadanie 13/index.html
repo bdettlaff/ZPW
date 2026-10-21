@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+		src="https://code.jquery.com/jquery-4.0.0.min.js"
+		integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+		crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+            $("#sprawdz").click(function(){
+                if($("#tekst").val().trim() === ""){
+                    $("#komunikat").text("To pole jest puste.")
+                } else {
+                    $("#komunikat").text($("#tekst").val())
+                }
+            })
+            
+            // let nazwisko = $("#nazwisko").val().trim();
+            // if (nazwisko === "") {
+            //     $("#info").text("Podaj nazwisko").css("color", "red");
+            // } else {
+            //     $("#info").text("Wysłano formularz").css("color", "green");
+            // }
+
+            $("#sprawdz2").click(function(){
+                let wiek = $("#wiek").val();
+                if(isNaN(wiek)){
+                    $("#blad").text("Wiek musi byc liczbą")
+                } else {
+                    $("#blad").text("Masz " + wiek + " lat.")
+                }
+            })
+
+              if (tekst === "" || isNaN(ocena)) {
+                    $("#info").text("To nie jest liczba");
+                } else if (ocena < 1 || ocena > 6) {
+                    $("#info").text("Ocena musi być z zakresu 1–6");
+                } else {
+                    $("#info").text("Zapisano ocenę: " + ocena);
+                }
+
+
+        })
+    </script>
+    <style>
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="tekst">
+    <input type="button" id="sprawdz" value="Check">
+    <p id="komunikat"></p>
+    <hr>
+    <input type="text" id="wiek">
+    <button id="sprawdz2">Sprawdź</button>
+    <p id="blad"></p>
+    <hr>
+    <input type="text" id="ocena" placeholder="Ocena">
+    <button id="zapisz">Zapisz</button>
+    <p id="info"></p>
+
+</body>
+</html>

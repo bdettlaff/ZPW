@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>
+            Zadania jquery
+        </title>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous"></script>
+         <script>
+            $(function(){
+                $("#newsletter").change(function(){
+                   if($(this).is(":checked")){
+                        $("#stan").text("Zapisano do newslettera");
+                   } else {
+                        $("#stan").text("Wypisano z newslettera");
+                   }
+                })
+
+                $("#regulamin").change(function () {
+                    if ($(this).is(":checked")) {
+                        $("#rejestruj").prop("disabled", false);
+                    } else {
+                        $("#rejestruj").prop("disabled", true);
+                    }
+                });
+
+                $("#tekst").on("input", function(){
+                    $("#podglad").text($(this).val());
+                })
+
+            })
+         </script>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <input type="checkbox" id="newsletter"> Chcę newsletter
+        <p id="stan"></p>
+        <hr>
+        <input type="checkbox" id="regulamin"> Akceptuję regulamin
+        <button id="rejestruj" disabled>Zarejestruj</button>
+        <hr>
+        <input type="text" id="tekst">
+        <p>Podgląd: <span id="podglad"></span></p>
+
+
+
+    </body>
+</html>

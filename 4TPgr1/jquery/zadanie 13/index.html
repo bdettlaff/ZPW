@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Wprowadzenie Jquery</title>
+        <script
+			  src="https://code.jquery.com/jquery-4.0.0.min.js"
+			  integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+			  crossorigin="anonymous">
+        </script>
+        <script>
+            $(function(){
+                $("#sprawdz").click(function(){
+                    let imie = $("#imie").val().trim()
+                    if(imie === ""){
+                        $("#blad").text("Pole imie jest wymagane")
+                    } else {
+                        $("#blad").text("Twoje imie to: " + imie)
+                    }
+                })
+
+                // $("#formularz").submit(function (e) {
+                //     e.preventDefault();
+                //     let nazwisko = $("#nazwisko").val().trim();
+
+                //     if (nazwisko === "") {
+                //         $("#info").text("Podaj nazwisko").css("color", "red");
+                //     } else {
+                //         $("#info").text("Wysłano formularz").css("color", "green");
+                //     }
+                // });
+
+                $("#sprawdzWiek").click(function(){
+                    let wiek = Number($("#wiek").val())
+                    if(isNaN(wiek)){
+                        $("#bladWiek").text("Wiek musi byc liczbą")
+                    } else {
+                        $("#bladWiek").text("Masz " + wiek + " lat")
+                    }
+                })
+
+            })
+        </script>
+        <style>
+         </style>
+    </head>
+    <body>
+        <input type="text" id="imie">
+        <button id="sprawdz">Sprawdź</button>
+        <p id="blad"></p>
+        <hr>
+        <input type="text" id="wiek">
+        <button id="sprawdzWiek">Sprawdź</button>
+        <p id="bladWiek"></p>
+        <hr>
+        <!-- Zadanie z ocena -->
+    </body>
+</html>

@@ -23,9 +23,9 @@
         echo "Ciacho ". $name . " nie jest ustawione!";
     }
     //Modyfikacja 
-    setcookie($name, "Słupina", time() + (86400*30), "/")
+    setcookie($name, "Słupina", time() + (86400*30), "/");
     //usuwanie
-    setcookie("username","", time()-3600)
+    setcookie("username","", time()-3600);
     //czy cookies są włączone?
     if(count($_COOKIE) > 0){
         echo "Ciastka włączone";

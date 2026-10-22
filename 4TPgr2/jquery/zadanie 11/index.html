@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>
+            Zadania jquery
+        </title>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous"></script>
+         <script>
+            $(function(){
+                $("#sprawdz").click(function(){
+
+                    let name = $("#imie").val().trim()
+
+                    if(name === ""){
+                        $("#blad").text("Pole jest wymagane.")
+                    } else { 
+                        $("#blad").text("Twoje imie to: " + name)
+                    }
+                })
+
+                $("#formularz").submit(function (e) {
+                    e.preventDefault();
+                    let nazwisko = $("#nazwisko").val().trim();
+
+                    if (nazwisko === "") {
+                        $("#info").text("Podaj nazwisko").css("color", "red");
+                    } else {
+                        $("#info").text("Wysłano formularz").css("color", "green");
+                    }
+                });
+
+                $("#sprawdzWiek").click(function(){
+
+                    let wiek = Number($("#wiek").val())
+
+                    if(isNaN(wiek)){
+                        $("#bladWiek").text("Wiek musi być liczbą")
+                    } else {
+                        $("#bladWiek").text("Masz " + wiek + " lat.")
+                    }
+                })
+
+
+            })
+         </script>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <input type="text" id="imie">
+        <button id="sprawdz">Sprawdź</button>
+        <p id="blad"></p>
+        <hr>
+        <form id="formularz">
+            <input type="text" id="nazwisko" placeholder="Nazwisko">
+            <button type="submit">Wyślij</button>
+        </form>
+        <p id="info"></p>
+        <hr>
+        <input type="text" id="wiek">
+        <button id="sprawdzWiek">Sprawdź</button>
+        <p id="bladWiek"></p>
+        <hr>
+
+    </body>
+</html>

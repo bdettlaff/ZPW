@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Wprowadzenie Jquery</title>
+        <script
+			  src="https://code.jquery.com/jquery-4.0.0.min.js"
+			  integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+			  crossorigin="anonymous">
+        </script>
+        <script>
+            $(function(){
+                // $("#kolor").change(function(){
+                //     $("body").css("background-color",$(this).val())
+                // })
+
+                // $("#newsletter").change(function(){
+                //     if($(this).is(":checked")){
+                //         $("#stan").text("Zapisano nas do newslettera.")
+                //     } else {
+                //         $("#stan").text("Wypisano nas z newslettera.")
+                //     }
+                // })
+                // $("#newsletter").change(function(){
+
+                // if ($(this).is(":checked")) {
+                //     $("#rejestruj").prop("disabled", false);
+                // } else {
+                //     $("#rejestruj").prop("disabled", true);
+                // }
+
+                // //Dodatkowe
+                // $("#rejestruj").prop("disabled", !$(this).is(":checked"));
+                //})
+
+                $("#tekst").on("input",function(){
+                    $("#podglad").text($(this).val())
+                })   
+
+                $("#komentarz").on("input", function(){
+                    let charLeft = 100 - $(this).val().length;
+
+                    $("#licznik").text(charLeft)
+
+                    if(charLeft < 10){
+                        $("#licznik").css("color","red")
+                    } else {
+                        $("#licznik").css("color","black")
+                    }
+                })
+        })
+        </script>
+        <style>
+         </style>
+    </head>
+    <body>
+        <select id="kolor">
+            <option value="white">Biały</option>
+            <option value="yellow">Żółty</option>
+            <option value="lightblue">Niebieski</option>
+        </select>
+        <hr>
+        <!-- zadanie z selectem -->
+        <hr>
+        <input type="checkbox" id="newsletter"> Chcę newsletter
+        <p id="stan"></p>
+        <hr>
+        <input type="text" id="tekst">
+        <p>Podgląd: <span id="podglad"></span></p>
+        <hr>
+        <textarea id="komentarz" maxlength="100"></textarea>
+        <p>Pozostało znaków: <span id="licznik">100</span></p>
+
+    </body>
+</html>

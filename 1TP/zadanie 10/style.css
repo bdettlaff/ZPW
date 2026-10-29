@@ -1,0 +1,32 @@
+*{
+    background-color: lightblue;
+}
+
+h1 {
+    text-align: center;
+    color: darkgreen;
+}
+
+.lista {
+    width: 300px;
+    text-align: center;
+    /* WAŻNE */
+    list-style-type: none;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.lista li{
+    border-bottom: 1px solid white;
+    /* grubość czcionki */
+    font-weight: bold;
+}
+
+.lista li:last-child{
+    border-bottom: none;
+}
+
+.lista li:hover{
+    background-color: grey;
+}

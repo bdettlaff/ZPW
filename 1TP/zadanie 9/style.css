@@ -1,4 +1,22 @@
+/* formatowanie domyślne */
+*{
+    background-color: blue;
+}
+
 table, th, td {
     background-color: red;
     border: 1px solid black;
+}
+
+table.klasa{
+    background-color: green;
+}
+
+
+table#ciapek{
+    background-color: green;
+}
+
+#ciapek{
+
 }

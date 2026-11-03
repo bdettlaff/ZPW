@@ -25,18 +25,19 @@
     </form> 
 
     <form method="POST" action="">
-        <input type="submit" value="clean"><br>
+        <button type="submit" name = "clean"></button><br>
     </form>
 <?php
 
     if(isset($_POST['clean'])){
-        unset($_SESSION['cart']);
+        $_SESSION['cart'] = [];
         echo "Wyczyszczony koszyk!";
+        var_dump($_SESSION['cart']);
     }
 
     //utworzenie tablicy z informacjami z formularza
     //przepisanie ich z POST do nowe tablicy asocjacyjnej
-    if(isset($_POST["name"])){
+    else if(isset($_POST["name"])){
         $new_product = [
                 'name' => $_POST["name"],
                 'price' => $_POST["price"],
@@ -54,7 +55,7 @@
                 echo "<td>".$product['name']."</td>";
                 echo "<td>".$product['price']."</td>";
                 echo "<td>".$product['amount']."</td>";
-                echo "<td>".($product['amount']*$product['price'])."</td>";
+                echo "<td>".((int)$product['amount']*(int)$product['price'])."</td>";
                 echo "</tr>";
             }
             echo "</table>";

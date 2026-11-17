@@ -22,6 +22,8 @@
         <input type="submit" value="Wyslij"><br>
     </form> 
 <?php
+    $x = 5;
+    echo "x = $x";
     if(isset($_POST["name"]) && isset($_POST["price"]) && isset($_POST["amount"]) && isset($_POST["id"] )){
         $name = $_POST["name"];
         $price = $_POST["price"];
